@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.hsn</groupId>
+        <artifactId>cloud-common</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <packaging>pom</packaging>
+    <artifactId>cloud-common-biz</artifactId>
+    <properties>
+        <polaris.dubbo.version>0.2.0-3.2.7</polaris.dubbo.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.tencent.cloud</groupId>
+            <artifactId>spring-cloud-starter-tencent-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <!--knife4j是为Java MVC框架集成Swagger生成Api文档的增强-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.hsn</groupId>
+            <artifactId>cloud-common-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.loki4j</groupId>
+            <artifactId>loki-logback-appender</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+
+        <!-- 北极星注册发现插件 -->
+        <dependency>
+            <groupId>com.tencent.polaris</groupId>
+            <artifactId>dubbo-registry-polaris</artifactId>
+            <version>${polaris.dubbo.version}</version>
+        </dependency>
+        <!-- 北极星元数据中心插件 -->
+        <dependency>
+            <groupId>com.tencent.polaris</groupId>
+            <artifactId>dubbo-metadatareport-polaris</artifactId>
+            <version>${polaris.dubbo.version}</version>
+        </dependency>
+
+        <!-- 北极星动态路由插件 -->
+        <dependency>
+            <groupId>com.tencent.polaris</groupId>
+            <artifactId>dubbo-router-polaris</artifactId>
+            <version>${polaris.dubbo.version}</version>
+        </dependency>
+        <!-- 北极星限流功能插件 -->
+        <dependency>
+            <groupId>com.tencent.polaris</groupId>
+            <artifactId>dubbo-ratelimit-polaris</artifactId>
+            <version>${polaris.dubbo.version}</version>
+        </dependency>
+        <!-- 北极星熔断功能插件 -->
+        <dependency>
+            <groupId>com.tencent.polaris</groupId>
+            <artifactId>dubbo-circuitbreaker-polaris</artifactId>
+            <version>${polaris.dubbo.version}</version>
+
+        </dependency>
+        <!-- 北极星动态配置中心插件 -->
+        <dependency>
+            <groupId>com.tencent.polaris</groupId>
+            <artifactId>dubbo-configcenter-polaris</artifactId>
+            <version>${polaris.dubbo.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

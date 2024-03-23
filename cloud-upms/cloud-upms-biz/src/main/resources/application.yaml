@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PORT:10010}
+spring:
+  application:
+    name: cloud-upms-biz
+  config:
+    import: polaris
+  cloud:
+    polaris:
+      address: grpc://127.0.0.1:8091
+      namespace: default
+  mvc:
+    servlet:
+      path: /api/upms
+  datasource:
+    url: jdbc:postgresql://192.168.2.131:5433/cloud
+    username: postgres
+    password: "!Prince1024"
+  data:
+    redis:
+      host: 127.0.0.1
+dubbo:
+  registry:
+    address: polaris://127.0.0.1:8091
+  metadata-report:
+    address: polaris://127.0.0.1:8091
+  protocol:
+    accesslog: true

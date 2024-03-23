@@ -1,0 +1,3 @@
+dubbo:
+  protocol:
+    accesslog: true
