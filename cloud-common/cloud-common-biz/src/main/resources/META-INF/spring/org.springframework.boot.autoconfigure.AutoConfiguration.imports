@@ -1,3 +1,3 @@
-io.github.hsn.common.biz.jackson.JacksonConfig
-io.github.hsn.common.biz.mvc.GlobalBizExceptionHandler
-io.github.hsn.common.biz.mvc.TenantFilter
+io.github.hsn.cloud.common.biz.jackson.JacksonConfig
+io.github.hsn.cloud.common.biz.mvc.GlobalBizExceptionHandler
+io.github.hsn.cloud.common.biz.mvc.TenantFilter

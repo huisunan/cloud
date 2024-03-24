@@ -26,3 +26,6 @@ dubbo:
     address: polaris://127.0.0.1:8091
   protocol:
     accesslog: true
+logging:
+  level:
+    io.github.hsn.cloud.upms.base.mapper: debug

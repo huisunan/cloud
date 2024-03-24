@@ -3,7 +3,7 @@ package io.github.hsn.cloud.upms.api.bean.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.github.hsn.common.api.bean.entity.BaseEntity;
+import io.github.hsn.cloud.common.api.bean.entity.BaseEntity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,12 +21,12 @@ public class SysUser extends BaseEntity {
     /**
      * 用户账号
      */
-    private String userAccount;
+    private String username;
 
     /**
      * 用户姓名
      */
-    private String name;
+    private String realName;
 
     /**
      * 密码

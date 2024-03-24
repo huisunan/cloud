@@ -3,9 +3,9 @@ package io.github.hsn.cloud.upms.biz.controller;
 import cn.hutool.core.util.RandomUtil;
 import io.github.hsn.cloud.upms.api.bean.entity.SysUser;
 import io.github.hsn.cloud.upms.base.mapper.SysUserMapper;
-import io.github.hsn.common.api.bean.common.Tenant;
-import io.github.hsn.common.api.bean.vo.R;
-import io.github.hsn.common.core.tenant.TenantUtil;
+import io.github.hsn.cloud.common.api.bean.common.Tenant;
+import io.github.hsn.cloud.common.api.bean.vo.R;
+import io.github.hsn.cloud.common.core.tenant.TenantUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +28,7 @@ public class SysUserController {
         Tenant currentTenant = TenantUtil.getCurrentTenant();
         log.info(TenantUtil.getCurrentTenantId());
         SysUser sysUser = new SysUser();
-        sysUser.setUserAccount(RandomUtil.randomString(12));
+        sysUser.setUsername(RandomUtil.randomString(12));
         sysUserMapper.insert(sysUser);
         return R.success(sysUser);
     }

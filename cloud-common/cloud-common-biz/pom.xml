@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <artifactId>cloud-common-biz</artifactId>
     <properties>
         <polaris.dubbo.version>0.2.0-3.2.7</polaris.dubbo.version>
@@ -64,24 +64,24 @@
             <version>${polaris.dubbo.version}</version>
         </dependency>
         <!-- 北极星限流功能插件 -->
-        <dependency>
-            <groupId>com.tencent.polaris</groupId>
-            <artifactId>dubbo-ratelimit-polaris</artifactId>
-            <version>${polaris.dubbo.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.tencent.polaris</groupId>-->
+<!--            <artifactId>dubbo-ratelimit-polaris</artifactId>-->
+<!--            <version>${polaris.dubbo.version}</version>-->
+<!--        </dependency>-->
         <!-- 北极星熔断功能插件 -->
-        <dependency>
-            <groupId>com.tencent.polaris</groupId>
-            <artifactId>dubbo-circuitbreaker-polaris</artifactId>
-            <version>${polaris.dubbo.version}</version>
+<!--        <dependency>-->
+<!--            <groupId>com.tencent.polaris</groupId>-->
+<!--            <artifactId>dubbo-circuitbreaker-polaris</artifactId>-->
+<!--            <version>${polaris.dubbo.version}</version>-->
 
-        </dependency>
+<!--        </dependency>-->
         <!-- 北极星动态配置中心插件 -->
-        <dependency>
-            <groupId>com.tencent.polaris</groupId>
-            <artifactId>dubbo-configcenter-polaris</artifactId>
-            <version>${polaris.dubbo.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.tencent.polaris</groupId>-->
+<!--            <artifactId>dubbo-configcenter-polaris</artifactId>-->
+<!--            <version>${polaris.dubbo.version}</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 

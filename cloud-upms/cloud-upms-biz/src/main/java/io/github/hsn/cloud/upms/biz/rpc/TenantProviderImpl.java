@@ -1,8 +1,8 @@
 package io.github.hsn.cloud.upms.biz.rpc;
 
 import io.github.hsn.cloud.upms.base.service.SysTenantService;
-import io.github.hsn.common.api.bean.common.Tenant;
-import io.github.hsn.common.core.tenant.TenantProvider;
+import io.github.hsn.cloud.common.api.bean.common.Tenant;
+import io.github.hsn.cloud.common.core.tenant.TenantProvider;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import javax.annotation.Resource;
