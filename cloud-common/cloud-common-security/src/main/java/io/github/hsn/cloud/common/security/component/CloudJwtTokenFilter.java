@@ -4,14 +4,15 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTUtil;
 import io.github.hsn.cloud.common.api.bean.common.JwtTokenInfo;
-import io.github.hsn.cloud.common.security.config.SecurityConfig;
+import io.github.hsn.cloud.common.core.user.UserProvider;
+import io.github.hsn.cloud.common.core.user.UserProviderCacheImpl;
 import io.github.hsn.cloud.common.security.config.SecurityProperties;
 import jakarta.annotation.Resource;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.redisson.api.RedissonClient;
 import org.springframework.http.HttpHeaders;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -27,6 +28,13 @@ public class CloudJwtTokenFilter implements Filter {
 
     @Resource
     private AuthenticationFailureHandler authenticationFailureHandler;
+
+
+    @Resource
+    private RedissonClient redissonClient;
+
+    @Resource
+    private UserProvider userProvider;
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -45,9 +53,13 @@ public class CloudJwtTokenFilter implements Filter {
                 }
                 JWT jwt = JWTUtil.parseToken(token);
                 JwtTokenInfo jwtTokenInfo = BeanUtil.copyProperties(jwt.getPayload().getClaimsJson(), JwtTokenInfo.class);
+
+                CloudUsersDetailService cloudUsersDetailService = new CloudUsersDetailService(
+                        new UserProviderCacheImpl(userProvider, redissonClient)
+                );
                 CloudJwtAuthenticationToken cloudJwtAuthenticationToken = new CloudJwtAuthenticationToken(
                         token,
-                        jwtTokenInfo
+                        cloudUsersDetailService.loadUserByUsername(jwtTokenInfo.getUsername())
                 );
                 cloudJwtAuthenticationToken.setAuthenticated(true);
 

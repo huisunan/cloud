@@ -1,8 +1,6 @@
 package io.github.hsn.cloud.common.security.component;
 
-import io.github.hsn.cloud.common.api.bean.common.JwtTokenInfo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -13,7 +11,7 @@ public class CloudJwtAuthenticationToken implements Authentication {
 
     private final String credentials;
 
-    private final JwtTokenInfo jwtTokenInfo;
+    private final CloudUserBaseDetails cloudUserDetails;
 
     private boolean aAuthenticated;
 
@@ -35,7 +33,7 @@ public class CloudJwtAuthenticationToken implements Authentication {
 
     @Override
     public Object getPrincipal() {
-        return jwtTokenInfo;
+        return cloudUserDetails;
     }
 
     @Override
@@ -50,6 +48,6 @@ public class CloudJwtAuthenticationToken implements Authentication {
 
     @Override
     public String getName() {
-        return jwtTokenInfo.getUsername();
+        return cloudUserDetails.getUsername();
     }
 }

@@ -25,12 +25,7 @@ public class SysUserController {
 
     @GetMapping("current")
     public R<SysUser> current() {
-        Tenant currentTenant = TenantUtil.getCurrentTenant();
-        log.info(TenantUtil.getCurrentTenantId());
-        SysUser sysUser = new SysUser();
-        sysUser.setUsername(RandomUtil.randomString(12));
-        sysUserMapper.insert(sysUser);
-        return R.success(sysUser);
+        return R.success();
     }
 
     @DeleteMapping("{id}")

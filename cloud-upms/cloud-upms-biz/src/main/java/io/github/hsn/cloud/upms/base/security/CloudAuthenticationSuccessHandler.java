@@ -3,28 +3,23 @@ package io.github.hsn.cloud.upms.base.security;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.IdUtil;
 import cn.hutool.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.hsn.cloud.common.api.bean.common.JwtTokenInfo;
 import io.github.hsn.cloud.common.api.bean.vo.R;
-import io.github.hsn.cloud.common.security.component.CloudUserDetails;
+import io.github.hsn.cloud.common.security.component.CloudUserBaseDetailsImpl;
 import io.github.hsn.cloud.common.security.config.SecurityProperties;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.redisson.api.*;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.time.Duration;
 import java.util.Date;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class CloudAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
@@ -39,8 +34,8 @@ public class CloudAuthenticationSuccessHandler implements AuthenticationSuccessH
         /*
          * 生成一个token
          */
-        CloudUserDetails cloudUserDetails = (CloudUserDetails) authentication.getPrincipal();
-        JwtTokenInfo jwtTokenInfo = new JwtTokenInfo(cloudUserDetails.getId(), cloudUserDetails.getUsername());
+        CloudUserBaseDetailsImpl cloudUserDetailsImpl = (CloudUserBaseDetailsImpl) authentication.getPrincipal();
+        JwtTokenInfo jwtTokenInfo = new JwtTokenInfo(cloudUserDetailsImpl.getId(), cloudUserDetailsImpl.getUsername());
         String token = JWT.create()
                 .addPayloads(BeanUtil.beanToMap(jwtTokenInfo))
                 .setExpiresAt(DateUtil.offset(new Date(), DateField.MINUTE, 10))

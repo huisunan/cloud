@@ -1,3 +1,4 @@
 io.github.hsn.cloud.common.core.config.RedissonConfig
 io.github.hsn.cloud.common.core.config.DubboProviderConfig
 io.github.hsn.cloud.common.core.tenant.TenantUtil
+io.github.hsn.cloud.common.core.security.SecurityUtils

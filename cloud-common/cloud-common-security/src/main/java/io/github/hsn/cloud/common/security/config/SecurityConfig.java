@@ -1,16 +1,14 @@
 package io.github.hsn.cloud.common.security.config;
 
 import cn.hutool.core.collection.CollUtil;
-import io.github.hsn.cloud.common.api.bean.common.JwtTokenInfo;
-import io.github.hsn.cloud.common.api.constants.FilterOrderConstants;
+import io.github.hsn.cloud.common.api.bean.common.CloudUser;
+import io.github.hsn.cloud.common.api.bean.common.CloudUserBase;
 import io.github.hsn.cloud.common.core.security.SecurityJwtTokenInfoProvider;
-import io.github.hsn.cloud.common.core.security.SecurityUtils;
 import io.github.hsn.cloud.common.security.component.*;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -20,9 +18,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.intercept.AuthorizationFilter;
 import org.springframework.security.web.authentication.AnonymousAuthenticationFilter;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 import java.util.List;
 
@@ -61,7 +57,7 @@ public class SecurityConfig {
         return () -> {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             if (authentication instanceof CloudJwtAuthenticationToken cloudJwtAuthenticationToken) {
-                return (JwtTokenInfo) cloudJwtAuthenticationToken.getPrincipal();
+                return (CloudUser) cloudJwtAuthenticationToken.getPrincipal();
             }
             return null;
         };

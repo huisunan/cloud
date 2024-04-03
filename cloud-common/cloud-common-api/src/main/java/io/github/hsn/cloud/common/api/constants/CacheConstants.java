@@ -11,7 +11,7 @@ public interface CacheConstants {
 
     String TENANT = GLOBALLY + "tenant_v1";
 
-    String AUTH_TOKEN = "auth:token";
+    String USER_BASE = "user:base";
 
-    String USER_TOKEN = "user:token";
+    String USER_EXTEND = "user:extends";
 }
