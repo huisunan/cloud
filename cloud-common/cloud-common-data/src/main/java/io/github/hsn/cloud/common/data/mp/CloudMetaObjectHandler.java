@@ -6,6 +6,11 @@ import org.apache.ibatis.reflection.MetaObject;
 
 import java.time.LocalDateTime;
 
+/**
+ * 填写元对象字段值
+ * 创建时间，创建人姓名，创建人id
+ * 更新时间，更新人姓名，更新人id
+ */
 public class CloudMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {

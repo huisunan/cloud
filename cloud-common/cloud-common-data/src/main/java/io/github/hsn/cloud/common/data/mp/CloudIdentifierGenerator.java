@@ -4,11 +4,14 @@ import com.baomidou.mybatisplus.core.incrementer.DefaultIdentifierGenerator;
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import com.github.f4b6a3.ulid.Ulid;
 
+/**
+ * Ulid 生成器
+ */
 public class CloudIdentifierGenerator implements IdentifierGenerator {
 
     @Override
     public Number nextId(Object entity) {
-        return null;
+        throw new UnsupportedOperationException("not support nextId");
     }
 
     @Override

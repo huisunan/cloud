@@ -5,6 +5,9 @@ import org.redisson.spring.starter.RedissonAutoConfigurationCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * redisson 配置
+ */
 @Configuration(proxyBeanMethods = false)
 public class RedissonConfig {
 

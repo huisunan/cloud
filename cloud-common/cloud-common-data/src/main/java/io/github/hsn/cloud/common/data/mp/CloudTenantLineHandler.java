@@ -6,6 +6,10 @@ import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.NullValue;
 import net.sf.jsqlparser.expression.StringValue;
 
+/**
+ * 租户拦截器
+ *
+ */
 public class CloudTenantLineHandler implements TenantLineHandler {
     @Override
     public Expression getTenantId() {

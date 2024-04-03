@@ -7,6 +7,9 @@ import org.apache.dubbo.config.spring.ReferenceBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * dubbo服务提供者配置
+ */
 @Configuration(proxyBeanMethods = false)
 public class DubboProviderConfig {
     @Bean

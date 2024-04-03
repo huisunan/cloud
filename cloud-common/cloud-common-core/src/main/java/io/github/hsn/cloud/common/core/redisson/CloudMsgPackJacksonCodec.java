@@ -7,6 +7,9 @@ import org.redisson.client.protocol.Encoder;
 import org.redisson.codec.CompositeCodec;
 import org.redisson.codec.MsgPackJacksonCodec;
 
+/**
+ *  msgpack + jackson
+ */
 public class CloudMsgPackJacksonCodec extends CompositeCodec {
     private static final MsgPackJacksonCodec MSG_PACK_JACKSON_CODEC = new MsgPackJacksonCodec();
 
