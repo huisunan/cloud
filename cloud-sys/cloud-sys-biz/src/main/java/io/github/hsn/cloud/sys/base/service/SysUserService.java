@@ -1,10 +1,10 @@
 package io.github.hsn.cloud.sys.base.service;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.github.hsn.cloud.common.data.mp.base.CloudServiceImpl;
 import io.github.hsn.cloud.sys.api.bean.entity.SysUser;
-import io.github.hsn.cloud.sys.base.mapper.SysUserMapper;
+import io.github.hsn.cloud.sys.base.mapper.SysUserBaseMapper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SysUserService extends ServiceImpl<SysUserMapper, SysUser> {
+public class SysUserService extends CloudServiceImpl<SysUserBaseMapper, SysUser> {
 }

@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("upms.sys_tenant")
+@TableName(value = "sys_tenant",schema = "sys")
 public class SysTenant extends BaseEntity {
 
     @TableId(type = IdType.ASSIGN_UUID)

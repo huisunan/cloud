@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 
 @DubboService
 public class TenantProviderImpl implements TenantProvider {
-     @Resource
+    @Resource
     private SysTenantService sysTenantService;
 
     @Override

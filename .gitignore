@@ -36,3 +36,4 @@ build/
 polaris/
 logs/
 /.idea/
+out/
