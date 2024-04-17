@@ -1,7 +1,7 @@
 package io.github.hsn.cloud.upms.base.security;
 
 import io.github.hsn.cloud.common.security.component.CloudCustomHttpSecurity;
-import io.github.hsn.cloud.common.security.component.CloudJwtTokenFilter;
+import io.github.hsn.cloud.common.security.point.CloudJwtTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

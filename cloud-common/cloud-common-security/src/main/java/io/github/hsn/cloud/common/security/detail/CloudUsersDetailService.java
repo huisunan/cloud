@@ -1,4 +1,4 @@
-package io.github.hsn.cloud.common.security.component;
+package io.github.hsn.cloud.common.security.detail;
 
 import io.github.hsn.cloud.common.core.user.UserProvider;
 import jakarta.annotation.Resource;

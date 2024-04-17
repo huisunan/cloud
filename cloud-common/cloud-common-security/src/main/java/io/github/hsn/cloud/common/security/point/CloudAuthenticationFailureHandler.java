@@ -1,7 +1,8 @@
-package io.github.hsn.cloud.common.security.component;
+package io.github.hsn.cloud.common.security.point;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.hsn.cloud.common.api.bean.vo.R;
+import io.github.hsn.cloud.common.security.exceptions.JwtTokenException;
 import io.github.hsn.cloud.common.security.util.WebUtil;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
@@ -18,18 +19,13 @@ public class CloudAuthenticationFailureHandler implements AuthenticationFailureH
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-        String message = null;
+        String message;
         if (exception instanceof JwtTokenException jwtTokenException) {
             message = jwtTokenException.getMessage();
         } else {
             message = "登录失败";
         }
 
-        WebUtil.writeR(
-                objectMapper,
-                response,
-                HttpServletResponse.SC_UNAUTHORIZED,
-                R.fail(message)
-        );
+        WebUtil.writeR(objectMapper, response, HttpServletResponse.SC_UNAUTHORIZED, R.fail(message));
     }
 }

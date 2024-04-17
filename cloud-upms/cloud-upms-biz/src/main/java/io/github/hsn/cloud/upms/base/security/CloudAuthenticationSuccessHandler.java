@@ -7,7 +7,7 @@ import cn.hutool.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.hsn.cloud.common.api.bean.common.JwtTokenInfo;
 import io.github.hsn.cloud.common.api.bean.vo.R;
-import io.github.hsn.cloud.common.security.component.CloudUserBaseDetailsImpl;
+import io.github.hsn.cloud.common.security.detail.CloudUserBaseDetailsImpl;
 import io.github.hsn.cloud.common.security.config.SecurityProperties;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;

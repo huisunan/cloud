@@ -1,4 +1,4 @@
-package io.github.hsn.cloud.common.security.component;
+package io.github.hsn.cloud.common.security.grant;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

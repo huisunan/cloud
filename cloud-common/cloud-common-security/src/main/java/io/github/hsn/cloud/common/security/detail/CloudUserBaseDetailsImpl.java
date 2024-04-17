@@ -1,8 +1,9 @@
-package io.github.hsn.cloud.common.security.component;
+package io.github.hsn.cloud.common.security.detail;
 
 import cn.hutool.core.collection.CollUtil;
 import io.github.hsn.cloud.common.api.bean.common.CloudUserBase;
 import io.github.hsn.cloud.common.api.bean.common.CloudUserExtend;
+import io.github.hsn.cloud.common.security.grant.RoleGrantedAuthority;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.ArrayList;

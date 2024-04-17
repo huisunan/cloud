@@ -1,5 +1,6 @@
-package io.github.hsn.cloud.common.security.component;
+package io.github.hsn.cloud.common.security.authentication;
 
+import io.github.hsn.cloud.common.security.detail.CloudUserBaseDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
