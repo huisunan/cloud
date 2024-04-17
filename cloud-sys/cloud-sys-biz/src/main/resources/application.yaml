@@ -28,4 +28,12 @@ dubbo:
     accesslog: true
 logging:
   level:
-    io.github.hsn.cloud.upms.base.mapper: debug
+    io.github.hsn.cloud.sys.base.mapper: debug
+
+zeebe:
+  client:
+    security:
+      plaintext: true
+    broker:
+      gateway-address: 127.0.0.1:26500
+
