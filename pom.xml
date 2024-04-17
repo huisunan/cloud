@@ -28,7 +28,7 @@
     </properties>
 
     <modules>
-        <module>cloud-upms</module>
+        <module>cloud-sys</module>
         <module>cloud-common</module>
     </modules>
 
