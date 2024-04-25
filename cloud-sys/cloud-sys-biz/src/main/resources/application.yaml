@@ -12,10 +12,6 @@ spring:
   mvc:
     servlet:
       path: /api/upms
-  datasource:
-    url: jdbc:postgresql://192.168.2.131:5433/cloud
-    username: postgres
-    password: "!Prince1024"
   data:
     redis:
       host: 127.0.0.1
@@ -29,11 +25,3 @@ dubbo:
 logging:
   level:
     io.github.hsn.cloud.sys.base.mapper: debug
-
-zeebe:
-  client:
-    security:
-      plaintext: true
-    broker:
-      gateway-address: 127.0.0.1:26500
-
