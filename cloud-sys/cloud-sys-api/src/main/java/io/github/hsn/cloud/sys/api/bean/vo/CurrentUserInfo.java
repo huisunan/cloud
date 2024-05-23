@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.Collection;
 
+/**
+ * 当前用户信息
+ */
 @Data
 public class CurrentUserInfo {
 
